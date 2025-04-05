@@ -1,111 +1,112 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aero ULM Valence - AUV</title>
+    <!-- Lien vers le fichier CSS local -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Lien vers Google Fonts pour la police Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
 </head>
 <body>
-    
+    <!-- En-tête de la page -->
     <header>
         <a href="#" class="logo">
             <img class="logo-icone" src="{% static 'res/icones/logo.png' %}" alt="Logo du site">
         </a>
-        <div class="menu-btn">
-
-        </div>
+        <div class="menu-btn"></div>
         <div class="navigation">
             <div class="navigation-items">
                 <a href="#">Accueil</a>
-                <a href="#">Vols Decouverte</a>
-                <a href="#">Ecole de Sport</a>
+                <a href="#">Vols Découverte</a>
+                <a href="#">École de Sport</a>
                 <a href="#">Navigation</a>
                 <a href="#">Le Club</a>
+                <a href="{% url 'connexion' %}">Mon Espace</a>
             </div>
         </div>
     </header>
 
+    <!-- Section principale -->
     <section class="home">
-        
-        <video class="video-slide" src="{% static 'res/videos/video1.mp4' %}" autoplay muted loop type="video/mp4"></video>
+        <!-- Vidéos en arrière-plan -->
+        <video class="video-slide active" src="{% static 'res/videos/video1.mp4' %}" autoplay muted loop type="video/mp4"></video>
         <video class="video-slide" src="{% static 'res/videos/video4.mp4' %}" autoplay muted loop type="video/mp4"></video>
 
+        <!-- Contenu actif par défaut -->
         <div class="content active">
             <h1>Le Multiaxe.<br><span>✈️</span></h1>
-            <p> Vous aimez la sensation de liberté, le pilotage précis et les panoramas à couper le souffle ? Le multiaxe est fait pour vous !  
-                Cet ULM à ailes fixes se rapproche de l’aviation traditionnelle par son cockpit fermé et ses commandes similaires à celles d’un avion léger.  
-                Facile à prendre en main et très maniable, il offre une expérience de vol unique, entre sécurité et adrénaline.  
-                Prenez les commandes et découvrez le ciel comme vous ne l’avez jamais vu !</p>
+            <p>Vous aimez la sensation de liberté, le pilotage précis et les panoramas à couper le souffle ? Le multiaxe est fait pour vous !
+                Cet ULM à ailes fixes se rapproche de l’aviation traditionnelle par son cockpit fermé et ses commandes similaires à celles d’un avion léger.
+                Facile à prendre en main et très maniable, il offre une expérience de vol unique, entre sécurité et adrénaline.
+                Prenez les commandes et découvrez le ciel comme vous ne l’avez jamais vu !</p>
             <a href="#">Découvrir</a>
         </div>
+
+        <!-- Contenu alternatif -->
         <div class="content">
             <h1>Le Pendulaire.<br><span>🌬️</span></h1>
-            <p> Vous aimez le vol en plein air, la sensation du vent et l’incroyable liberté du ciel ? Le pendulaire est fait pour vous !  
-                Cet ULM à aile delta se pilote par déplacement du corps, offrant une immersion totale et des sensations uniques.  
-                Léger, maniable et intuitif, il permet de voler en harmonie avec les éléments, entre douceur et adrénaline.  
-                Accessible à tous, il promet une expérience inoubliable, proche du vol libre. Prenez les commandes et laissez-vous porter par le vent !</p>
+            <p>Vous aimez le vol en plein air, la sensation du vent et l’incroyable liberté du ciel ? Le pendulaire est fait pour vous !
+                Cet ULM à aile delta se pilote par déplacement du corps, offrant une immersion totale et des sensations uniques.
+                Léger, maniable et intuitif, il permet de voler en harmonie avec les éléments, entre douceur et adrénaline.
+                Accessible à tous, il promet une expérience inoubliable, proche du vol libre. Prenez les commandes et laissez-vous porter par le vent !</p>
             <a href="#">Découvrir</a>
         </div>
+
+        <!-- Icônes de médias sociaux -->
         <div class="media-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/aeroulmvalence26"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/33066652339"><i class="fab fa-whatsapp"></i></a>
         </div>
+
+        <!-- Navigation du slider -->
         <div class="slider-navigation">
             <div class="nav-btn active"></div>
             <div class="nav-btn"></div>
         </div>
-
-
     </section>
-    
 
+    <!-- Scripts JavaScript -->
     <script type="text/javascript">
-
+        // Gestion du bouton de menu
         document.querySelector('.menu-btn').addEventListener('click', function() {
             const navigation = document.querySelector('.navigation');
             navigation.classList.toggle('active'); // Active/désactive le menu
             this.classList.toggle('active'); // Change l'icône du bouton
         });
 
-    // pour la vidéo
+        // Gestion de la navigation du slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
 
-    const btns = document.querySelectorAll(".nav-btn");
-    const slides = document.querySelectorAll(".video-slide");
-    const contents = document.querySelectorAll(".content");
+        var sliderNav = function(manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
 
-    var sliderNav = function(manual) {
-        btns.forEach((btn) => {
-            btn.classList.remove("active");
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
         });
-
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-        });
-
-        contents.forEach((content) => {
-            content.classList.remove("active");
-        });
-
-        btns[manual].classList.add("active");
-        slides[manual].classList.add("active");
-        contents[manual].classList.add("active");
-    }
-
-    btns.forEach((btn,i) => {
-        btn.addEventListener("click",() => {
-            sliderNav(i)
-        })
-    });
-
     </script>
-    
 </body>
 </html>
