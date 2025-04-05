@@ -35,19 +35,32 @@
     <section class="home">
         
         <video class="video-slide" src="{% static 'res/videos/video1.mp4' %}" autoplay muted loop type="video/mp4"></video>
+        <video class="video-slide" src="{% static 'res/videos/video4.mp4' %}" autoplay muted loop type="video/mp4"></video>
 
-        <div class="content">
-            <h1>Le Multiaxe.<br><span>🌤️</span></h1>
+        <div class="content active">
+            <h1>Le Multiaxe.<br><span>✈️</span></h1>
             <p> Vous aimez la sensation de liberté, le pilotage précis et les panoramas à couper le souffle ? Le multiaxe est fait pour vous !  
                 Cet ULM à ailes fixes se rapproche de l’aviation traditionnelle par son cockpit fermé et ses commandes similaires à celles d’un avion léger.  
                 Facile à prendre en main et très maniable, il offre une expérience de vol unique, entre sécurité et adrénaline.  
-                Prenez les commandes et découvrez le ciel comme vous ne l’avez jamais vu ! 🚀✈️</p>
+                Prenez les commandes et découvrez le ciel comme vous ne l’avez jamais vu !</p>
+            <a href="#">Découvrir</a>
+        </div>
+        <div class="content">
+            <h1>Le Pendulaire.<br><span>🌬️</span></h1>
+            <p> Vous aimez le vol en plein air, la sensation du vent et l’incroyable liberté du ciel ? Le pendulaire est fait pour vous !  
+                Cet ULM à aile delta se pilote par déplacement du corps, offrant une immersion totale et des sensations uniques.  
+                Léger, maniable et intuitif, il permet de voler en harmonie avec les éléments, entre douceur et adrénaline.  
+                Accessible à tous, il promet une expérience inoubliable, proche du vol libre. Prenez les commandes et laissez-vous porter par le vent !</p>
             <a href="#">Découvrir</a>
         </div>
         <div class="media-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
         </div>
 
 
@@ -62,18 +75,35 @@
             this.classList.toggle('active'); // Change l'icône du bouton
         });
 
-        // Fermer le menu si on clique en dehors
-        document.addEventListener('click', function(event) {
-            const navigation = document.querySelector('.navigation');
-            const menuBtn = document.querySelector('.menu-btn');
-            
-            // Vérifier si le clic est en dehors du menu et du bouton de menu
-            if (!navigation.contains(event.target) && !menuBtn.contains(event.target)) {
-                navigation.classList.remove('active'); // Fermer le menu
-                menuBtn.classList.remove('active'); // Revenir à l'icône du menu
-            }
+    // pour la vidéo
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual) {
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
         });
 
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn,i) => {
+        btn.addEventListener("click",() => {
+            sliderNav(i)
+        })
+    });
 
     </script>
     
