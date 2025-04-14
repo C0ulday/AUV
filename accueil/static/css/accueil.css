@@ -63,16 +63,11 @@ header .navigation .navigation-items a:before {
 header .navigation .navigation-items a:hover:before {
     width: 100%;
 }
-
-/* Style spécifique pour "Mon Espace" */
-.navigation-items .mon-espace {
-    color: #F9AE5D !important; /* Orange stylé */
+/* Style spécifique pour Mon Espace */
+header .navigation .navigation-items a.mon-espace {
+    color: #F9AE5D; /* orange */
     font-weight: 600;
 }
-.navigation-items .mon-espace:hover:before {
-    background-color: #F9AE5D;
-}
-
 
 /* Style des sections */
 section {
