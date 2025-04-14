@@ -4,25 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de Connexion</title>
-    <link rel="stylesheet" href="{% static 'css/styleConnexion.css'}">
+    <title>AUV - Connexion à mon espace</title>
+    <link rel="stylesheet" href="{% static 'css/connexion.css'}">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Connexion</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" required>
+    <section>
+        <div class="imgBox"></div>
+        <div class="contentBox">
+            <div class="formBox">
+                <h2>Connexion à mon espace</h2>
+                <form action="#">
+                    <div class="inputBx">
+                        <span>Identifiant</span>
+                        <input type="text">
+                    </div>
+                    <div class="inputBx">
+                        <span>Mot de passe</span>
+                        <input type="password">
+                    </div>
+                    <div class="remember">
+                        <label>
+                            <input type="checkbox">Se souvenir de moi
+                        </label>
+                    </div>
+                    <div>
+                        <div class="inputBx">
+                            <input type="submit" value="Connexion">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="inputBx">
+                            <p>Pas de compte ? <a href="#">Nous contacter</a></p>
+                        </div>
+                    </div>
+                    
+                </form>
             </div>
-            <div class="input-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Se connecter</button>
-        </form>
-        <div id="error-message" class="error-message"></div>
-    </div>
-    <script src="script.js"></script>
+        </div>
+    </section>
 </body>
+
 </html>
