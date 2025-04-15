@@ -9,7 +9,16 @@
 </head>
 <body>
     <section>
-        <div class="imgBox"></div>
+        <div class="imgBox">
+            <div class="slideshow">
+            <img src="{% static 'res/images/image7.jpeg' %}" alt="image1" class="slide active">
+            <img src="{% static 'res/images/image8.jpeg' %}" alt="image2" class="slide">
+            <img src="{% static 'res/images/image10.jpeg' %}" alt="image3" class="slide">
+            <img src="{% static 'res/images/image20.jpeg' %}" alt="image4" class="slide">
+            <img src="{% static 'res/images/image13.jpeg' %}" alt="image5" class="slide">
+            </div>
+        </div>
+          
         <div class="contentBox">
             <div class="formBox">
                 <h2>Connexion à mon espace</h2>
@@ -43,5 +52,15 @@
         </div>
     </section>
 </body>
+<script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }, 3000);
+</script>
 
 </html>
