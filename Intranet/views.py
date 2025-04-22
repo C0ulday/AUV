@@ -8,8 +8,6 @@ from datetime import datetime
 from Intranet.forms import loginForm
 
 from Intranet.models import Member
-
-from ULMASSO.views import dateTimeParis
 #************************************************************************************************************
 
 #Gestion des sessions
@@ -24,9 +22,9 @@ def getLoggedMemberFromRequest(request):
 
     #Se connecter
 def intranetLogin(request):
-    templateName = "intranetLogin.html"
+    templateName = "accueil/templates/monespace.html"
     context = {
-        'current_date_time' : dateTimeParis(),
+        'current_date_time' : datetime.now(),
         'current_year' : datetime.now().year,
     }
     if len(request.POST) > 0 :
@@ -36,7 +34,7 @@ def intranetLogin(request):
             password = request.POST['password'] 
             if email and password:
                 result = Member.objects.filter(email=email,
-                                               password = password)
+                                            password = password)
                 if len(result) != 1:
                     error = 'Identifiant ou mot de passe erroné'
                     context['error'] = error
@@ -46,7 +44,7 @@ def intranetLogin(request):
                     request.session['loggedMemberId'] = loggedMember.id
                     intranetAccueil(request)
                     context['loggedMember'] = loggedMember
-                    templateName = 'intranetAccueil.html'
+                    templateName = 'accueil/templates/monespace.html'
         else:
             form = loginForm()
             context['form'] = form
@@ -66,9 +64,9 @@ def intranetDeconnect(request):
 def intranetAccueil(request):
     loggedMember = getLoggedMemberFromRequest(request)
     if loggedMember:
-        templateName = "intranetAccueil.html"
+        templateName = "accueil/templates/accueil.html"
         context = {
-                'current_date_time' : dateTimeParis(),
+                'current_date_time' : datetime.now(),
                 'current_year' : datetime.now().year,
                 'loggedMember' : loggedMember,
             }               

@@ -23,7 +23,7 @@
         <div class="contentBox">
             <div class="formBox">
                 <h2>Connexion à mon espace</h2>
-                <form action="#">
+                <form action="intranetLogin" method="POST" >
                     <div class="inputBx">
                         <span>Identifiant</span>
                         <input type="text">
@@ -61,7 +61,7 @@
         slides[index].classList.remove('active');
         index = (index + 1) % slides.length;
         slides[index].classList.add('active');
-    }, 3000);
+    }, 5000);
 </script>
 
 </html>

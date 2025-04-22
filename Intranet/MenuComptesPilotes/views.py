@@ -9,7 +9,7 @@ from datetime import datetime,\
                         date
 
 #Imports internes
-from Internet.views import dateTimeParis
+from Intranet.views import dateTimeParis
 from Intranet.views import getLoggedMemberFromRequest
 from Intranet.models import Vol,\
                             Member,\
