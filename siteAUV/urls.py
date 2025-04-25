@@ -21,5 +21,6 @@ from accueil.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
-    path('connexion/', connexion, name='connexion')
+    path('connexion/', connexion, name='connexion'),
+    path('connexionEspace/', connexionEspace, name='connexionEspace'),
     ]
