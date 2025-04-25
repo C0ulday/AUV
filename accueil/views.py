@@ -6,3 +6,4 @@ def index(request):
 
 def connexion(request):
     return render(request,'monespace.html',context={})
+

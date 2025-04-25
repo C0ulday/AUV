@@ -22,4 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
     path('connexion/', connexion, name='connexion')
-]
+    ]
