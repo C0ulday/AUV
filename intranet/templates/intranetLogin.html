@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="static/css/styleIntranet.css" />
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+			AUV | Login Intranet
+        </title>
+    </head>
+    
+    <body id = "{% block bodyId %}loginPage{% endblock %}">	
+		<header>
+		</header>
+		<section id = "msgAccueil">
+			<p>{{current_date_time}}</p>
+		</section>
+		<section id="titrePage">
+			<p>Se connecter</p>
+		</section>	
+		<section id = "mainContent">
+			<form action ="intranetLogin" method="POST">
+				{% csrf_token %}
+				{% if error %}
+					<p class="error">{{error}}</p>
+				{% endif %}
+				{{form.as_p}}			
+				<p>
+					<input type="submit" value= "Valider" class = "BtnSubmitLogin" />
+				</p>
+			</form>
+		</section>			
+    </body>
+</html>
