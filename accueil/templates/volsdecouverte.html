@@ -1,40 +1,32 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUV - Vols Découverte</title>
-    
-    <!-- Feuille de style principale -->
-    <link rel="stylesheet" href="{% static 'css/volsdecouverte.css' %}">
-    
-    <!-- Font Awesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    
-    <!-- Google Fonts : Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
 
-<body>
-    <!-- En-tête de la page -->
-    <header>
-        <a href="{% url 'accueil' %}" class="logo">
-            <img class="logo-icone" src="{% static 'res/icones/logo.png' %}" alt="Logo du site">
-        </a>
-        <div class="menu-btn"></div>
-        <nav class="navigation">
-            <div class="navigation-items">
-                <a href="{% url 'accueil' %}">Accueil</a>
-                <a href="{% url 'volsDecouverte' %}">Vols Découverte</a>
-                <a href="#">École de Sport</a>
-                <a href="#">Navigation</a>
-                <a href="#">Le Club</a>
-                <a href="{% url 'connexion' %}">
-                    <i class="fa fa-user" aria-hidden="true" style="color: white;"></i> Mon Espace
-                </a>
+{% block title %}Vols Découverte - Aero ULM Valence{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/volsdecouverte.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="reservation">
+    <img src="{% static 'res/images/image11.jpeg' %}" class="img" id="img2" alt="Image de la montagne enneigée">
+      <!-- SECTION ULM -->
+      <div class="ulm-section">
+        <!-- Zone image : slides -->
+        <div class="container-slide">
+          <div class="image-container">
+            <!-- Slide 1 -->
+            <div class="slide_div" id="slide_1">
+              <a href="#slide_1" id="button-slide1"></a>
+              <img src="{% static 'res/images/image13.jpeg' %}" class="img" id="img2" alt="Image d'un pendulaire">
             </div>
-        </nav>
-    </header>
-</body>
-</html>
+            <!-- Slide 2 -->
+            <div class="slide_div" id="slide_2">
+              <a href="#slide_2" id="button-slide2"></a>
+              <img src="{% static 'res/images/image2.jpg' %}" class="img" id="img1" alt="Image d'un multiaxe">
+            </div>
+          </div>
+        </div>
+
+{% endblock %}
