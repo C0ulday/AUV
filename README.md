@@ -6,31 +6,32 @@ Bienvenue sur le dépôt du site web de notre association aéronautique. Ce docu
 
 🚀 Fonctionnalités et Sections
 
-1. 🏠 Accueil
+#1. 🏠 Accueil
 
 Présentation de l'association
 Mise en avant des activités principales
 Témoignages des membres
 Call To Action (CTA) pour découvrir et réserver un vol
-2. 🖼️ Galerie
+#2. 🖼️ Galerie
 
 Espace dédié aux photos et vidéos du club
 Albums organisés par événements ou catégories (ex. vols, formations, rencontres)
 Fonctionnalité de partage sur les réseaux sociaux
-3. 📰 Actualités
+#3. 📰 Actualités
 
 Blog avec les derniers événements et informations
 Articles sur les nouvelles réglementations et événements internes
 Calendrier des événements à venir
-4. 📅 Espace de réservation
+#4. 📅 Espace de réservation
 
 Voir les prix des vols et des formations
 Choisir et réserver une date pour rencontrer un instructeur
 Liste des options disponibles (type de vol, durée, tarifs)
 Confirmation et gestion des réservations
-👤 Espace Utilisateur
 
-5.1 🧑‍🎓 Espace Élève
+#👤 Espace Utilisateur
+
+#5.1 🧑‍🎓 Espace Élève
 
 Disponibilités de l'instructeur
 
@@ -57,41 +58,48 @@ Autres fonctionnalités
 
 Téléchargement de documents pédagogiques
 Messagerie interne avec l'instructeur
-5.2 🧑‍🏫 Espace Instructeur
+
+#5.2 🧑‍🏫 Espace Instructeur
 
 Gestion des disponibilités
 Consultation et validation des réservations
 Suivi des élèves (progression, notes, feedback)
 Mise à jour des informations des avions (état technique, réparations)
 Communication avec les élèves
-5.3 🛠️ Espace Administrateur
+
+#5.3 🛠️ Espace Administrateur
 
 Gestion des membres (ajout, modification, suppression de comptes)
 Gestion des plannings des instructeurs
 Gestion des paiements et remboursements
 Gestion des avions (maintenance, documentation)
 Statistiques et rapports d'activité
-🔒 Espace de connexion
+
+#🔒 Espace de connexion
 
 Connexion sécurisée (identifiant/mot de passe, authentification 2FA)
 Accès aux espaces selon le profil (élève, instructeur, administrateur)
-📞 Contact
+
+#📞 Contact
 
 Formulaire de contact
 Informations de l'association (adresse, téléphone, email)
 Foire aux questions (FAQ)
-⚖️ Mentions légales et politique de confidentialité
+
+#⚖️ Mentions légales et politique de confidentialité
 
 Protection des données personnelles
 Conditions générales d'utilisation
 Politique de remboursement
-🛠️ Fonctionnalités supplémentaires (à envisager)
+
+#🛠️ Fonctionnalités supplémentaires (à envisager)
 
 Intégration d'une newsletter
 Système de parrainage pour les nouveaux membres
 Boutique en ligne pour l'achat de produits dérivés (t-shirts, casquettes, etc.)
-📂 Structure du projet
 
-🛠️ Installation
+#📂 Structure du projet
 
-🚀 Contribution
+#🛠️ Installation
+
+#🚀 Contribution
