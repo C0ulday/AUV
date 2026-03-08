@@ -1,7 +1,7 @@
 # Aeronautical Club Website 
 
 
-# Description des attentes éventielles ( READ.me avec IA)
+# Description des attentes éventuelles ( READ.me avec IA)
 # AUV
 
 📘 README - Site Web de l'Association Aéronautique
