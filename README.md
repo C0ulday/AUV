@@ -1,10 +1,8 @@
 # Aeronautical Club Website 
-# In process
-# Branche en avance : ULMASSO
+# In process : see branch ULMASSO
 
 
 # Description des attentes éventuelles ( READ.me avec IA)
-# AUV
 
 📘 README - Site Web de l'Association Aéronautique
 
